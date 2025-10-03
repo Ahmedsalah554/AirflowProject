@@ -19,6 +19,7 @@ This project demonstrates an end-to-end data pipeline that:
 
 ## 🏗️ Architecture
 
+
 ```mermaid
 graph TB
     A[PostgreSQL Database] --> B[Airflow DAG]
@@ -28,7 +29,8 @@ graph TB
     D --> F[Report Generation]
     E --> G[Output Files]
     F --> G
-    🛠️ Tech Stack
+
+🛠️ Tech Stack
 Apache Airflow 2.8.1 - Workflow orchestration
 
 PostgreSQL 13 - Relational database
