@@ -17,6 +17,15 @@ This project demonstrates an end-to-end data pipeline that:
 - 📊 Generates automated reports and visualizations
 - ⚡ Automates the entire workflow using Apache Airflow
 
+- 
+## 🏗️ Pipeline Architecture
+─────────────────┐ ┌──────────────────┐ ┌──────────────────┐
+│ PostgreSQL │ │ Apache Airflow │ │ Data Output │
+│ │ │ │ │ │
+│ • Sales Table │───▶│ • DAG Orchestration │───▶│ • CSV Reports │
+│ • Sample Data │ │ • Task Management │ │ • PNG Charts │
+│ • Transactions │ │ • Scheduling │ │ • Text Reports │
+└─────────────────┘ └──────────────────┘ └──────────────────┘
 
 ## 🛠️ Tech Stack
 
@@ -75,17 +84,20 @@ This project demonstrates an end-to-end data pipeline that:
  Click trigger button to start the analysis
 
 📁 Project Structure
+
+
 AirflowProject/
-├── .docker/           # Docker volumes and data persistence
-│   ├── dags/          # Airflow DAGs
-│   ├── logs/          # Airflow logs
-│   ├── plugins/       # Airflow plugins
-│   └── data/          # Generated reports and data
-├── docker-compose.yml # Service orchestration
-├── README.md          # Project documentation
-├── requirements.txt   # Python dependencies
-├── LICENSE           # MIT License
-└── scripts/          # Utility scripts
+├── .docker/
+│   ├── dags/                 # Airflow DAGs and workflows
+│   ├── logs/                 # Airflow execution logs
+│   ├── plugins/              # Custom Airflow plugins
+│   └── data/                 # Generated reports and output files
+├── docker-compose.yml        # Docker service orchestration
+├── README.md                 # Project documentation
+├── requirements.txt          # Python dependencies
+├── LICENSE                   # MIT License
+└── scripts/                  # Utility and helper scripts
+
 
 🔧 Pipeline Tasks
 sales_revenue_pipeline DAG
