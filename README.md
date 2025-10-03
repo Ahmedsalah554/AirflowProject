@@ -19,9 +19,12 @@ This project demonstrates an end-to-end data pipeline that:
 
 - 
 ## 🏗️ Pipeline Architecture
-POSTGRESQL → AIRFLOW DAG → DATA PROCESSING → OUTPUT FILES
-↓ ↓ ↓ ↓
-Database Orchestration Calculations Reports/Charts
+flowchart LR
+    A[PostgreSQL Database] -->|Extract| B[Airflow DAG]
+    B -->|Transform| C[Data Processing - Pandas]
+    C -->|Visualize| D[Matplotlib Charts]
+    C -->|Export| E[CSV / Reports]
+
 ## 🛠️ Tech Stack
 
 - **Apache Airflow 2.8.1** - Workflow orchestration
@@ -82,16 +85,16 @@ Database Orchestration Calculations Reports/Charts
 
 
 AirflowProject/
-├── .docker/
-│   ├── dags/          # Airflow DAGs and workflows
-│   ├── logs/          # Airflow execution logs
-│   ├── plugins/       # Custom Airflow plugins
-│   └── data/          # Generated reports and output files
-├── docker-compose.yml # Docker service orchestration
-├── README.md          # Project documentation
-├── requirements.txt   # Python dependencies
-├── LICENSE            # MIT License
-└── scripts/           # Utility and helper scripts
+├── dags/                # Airflow DAGs and workflows
+├── logs/                # Airflow execution logs
+├── plugins/             # Custom Airflow plugins
+├── data/                # Generated reports and output files
+├── docker-compose.yml   # Docker service orchestration
+├── requirements.txt     # Python dependencies
+├── README.md            # Project documentation
+├── LICENSE              # MIT License
+└── scripts/             # Utility and helper scripts
+
 
 
 🔧 Pipeline Tasks
