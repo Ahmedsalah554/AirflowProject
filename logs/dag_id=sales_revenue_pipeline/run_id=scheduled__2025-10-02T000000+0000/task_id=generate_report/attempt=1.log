@@ -1,0 +1,24 @@
+[2025-10-03T07:54:41.567+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_revenue_pipeline.generate_report scheduled__2025-10-02T00:00:00+00:00 [queued]>
+[2025-10-03T07:54:41.591+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_revenue_pipeline.generate_report scheduled__2025-10-02T00:00:00+00:00 [queued]>
+[2025-10-03T07:54:41.593+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-03T07:54:41.628+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): generate_report> on 2025-10-02 00:00:00+00:00
+[2025-10-03T07:54:41.668+0000] {standard_task_runner.py:60} INFO - Started process 399 to run task
+[2025-10-03T07:54:41.720+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'sales_revenue_pipeline', 'generate_report', 'scheduled__2025-10-02T00:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/sales_revenue_pipeline.py', '--cfg-path', '/tmp/tmp660__sr7']
+[2025-10-03T07:54:41.751+0000] {standard_task_runner.py:88} INFO - Job 14: Subtask generate_report
+[2025-10-03T07:54:42.184+0000] {task_command.py:423} INFO - Running <TaskInstance: sales_revenue_pipeline.generate_report scheduled__2025-10-02T00:00:00+00:00 [running]> on host dcf7c9b4a5d6
+[2025-10-03T07:54:42.847+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sales_revenue_pipeline' AIRFLOW_CTX_TASK_ID='generate_report' AIRFLOW_CTX_EXECUTION_DATE='2025-10-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-02T00:00:00+00:00'
+[2025-10-03T07:54:43.002+0000] {logging_mixin.py:188} INFO - 
+    📊 DAILY REVENUE REPORT 📊
+    ================================
+    Total Period: 4 days
+    Total Revenue: $7,129.00
+    Average Daily Revenue: $1,782.25
+    Best Performing Day: 2024-01-01 - $3,127.50
+    Lowest Revenue Day: 2024-01-02 - $1,025.00
+    ================================
+    
+[2025-10-03T07:54:43.008+0000] {logging_mixin.py:188} INFO - ✅ Revenue report generated successfully
+[2025-10-03T07:54:43.010+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-10-03T07:54:43.063+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=sales_revenue_pipeline, task_id=generate_report, execution_date=20251002T000000, start_date=20251003T075441, end_date=20251003T075443
+[2025-10-03T07:54:43.189+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-03T07:54:43.242+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
