@@ -17,41 +17,28 @@ This project demonstrates an end-to-end data pipeline that:
 - 📊 Generates automated reports and visualizations
 - ⚡ Automates the entire workflow using Apache Airflow
 
-## 🏗️ Architecture
 
+## 🛠️ Tech Stack
 
-```mermaid
-graph TB
-    A[PostgreSQL Database] --> B[Airflow DAG]
-    B --> C[Data Extraction]
-    C --> D[Revenue Calculation]
-    D --> E[Data Visualization]
-    D --> F[Report Generation]
-    E --> G[Output Files]
-    F --> G
+- **Apache Airflow 2.8.1** - Workflow orchestration
+- **PostgreSQL 13** - Relational database
+- **Python 3.8** - Data processing
+- **Docker & Docker Compose** - Containerization
+- **Pandas** - Data manipulation
+- **Matplotlib** - Data visualization
 
-🛠️ Tech Stack
-Apache Airflow 2.8.1 - Workflow orchestration
+## 🚀 Quick Start
 
-PostgreSQL 13 - Relational database
+### Prerequisites
+- 🐳 Docker
+- 🐳 Docker Compose
 
-Python 3.8 - Data processing
+### Installation & Setup
 
-Docker & Docker Compose - Containerization
-
-Pandas - Data manipulation
-
-Matplotlib - Data visualization
-
-🚀 Quick Start
-Prerequisites
-🐳 Docker
-
-🐳 Docker Compose
-Installation & Setup
-1-Clone the repository
- git clone https://github.com/Ahmedsalah554/AirflowProject.git
- cd AirflowProject
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ahmedsalah554/AirflowProject.git
+   cd AirflowProject
 2-Start the services
  docker-compose up -d
 
