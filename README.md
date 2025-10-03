@@ -19,14 +19,9 @@ This project demonstrates an end-to-end data pipeline that:
 
 - 
 ## 🏗️ Pipeline Architecture
-─────────────────┐ ┌──────────────────┐ ┌──────────────────┐
-│ PostgreSQL │ │ Apache Airflow │ │ Data Output │
-│ │ │ │ │ │
-│ • Sales Table │───▶│ • DAG Orchestration │───▶│ • CSV Reports │
-│ • Sample Data │ │ • Task Management │ │ • PNG Charts │
-│ • Transactions │ │ • Scheduling │ │ • Text Reports │
-└─────────────────┘ └──────────────────┘ └──────────────────┘
-
+POSTGRESQL → AIRFLOW DAG → DATA PROCESSING → OUTPUT FILES
+↓ ↓ ↓ ↓
+Database Orchestration Calculations Reports/Charts
 ## 🛠️ Tech Stack
 
 - **Apache Airflow 2.8.1** - Workflow orchestration
@@ -88,15 +83,15 @@ This project demonstrates an end-to-end data pipeline that:
 
 AirflowProject/
 ├── .docker/
-│   ├── dags/                 # Airflow DAGs and workflows
-│   ├── logs/                 # Airflow execution logs
-│   ├── plugins/              # Custom Airflow plugins
-│   └── data/                 # Generated reports and output files
-├── docker-compose.yml        # Docker service orchestration
-├── README.md                 # Project documentation
-├── requirements.txt          # Python dependencies
-├── LICENSE                   # MIT License
-└── scripts/                  # Utility and helper scripts
+│   ├── dags/          # Airflow DAGs and workflows
+│   ├── logs/          # Airflow execution logs
+│   ├── plugins/       # Custom Airflow plugins
+│   └── data/          # Generated reports and output files
+├── docker-compose.yml # Docker service orchestration
+├── README.md          # Project documentation
+├── requirements.txt   # Python dependencies
+├── LICENSE            # MIT License
+└── scripts/           # Utility and helper scripts
 
 
 🔧 Pipeline Tasks
