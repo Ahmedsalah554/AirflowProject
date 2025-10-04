@@ -17,39 +17,35 @@ This project demonstrates an end-to-end data pipeline that:
 - 📊 Generates automated reports and visualizations
 - ⚡ Automates the entire workflow using Apache Airflow
 
-## 🏗️ Architecture
+- 
+## 🏗️ Pipeline Architecture
+flowchart LR
+    A[PostgreSQL Database] -->|Extract| B[Airflow DAG]
+    B -->|Transform| C[Data Processing - Pandas]
+    C -->|Visualize| D[Matplotlib Charts]
+    C -->|Export| E[CSV / Reports]
 
-```mermaid
-graph TB
-    A[PostgreSQL Database] --> B[Airflow DAG]
-    B --> C[Data Extraction]
-    C --> D[Revenue Calculation]
-    D --> E[Data Visualization]
-    D --> F[Report Generation]
-    E --> G[Output Files]
-    F --> G
-    🛠️ Tech Stack
-Apache Airflow 2.8.1 - Workflow orchestration
+## 🛠️ Tech Stack
 
-PostgreSQL 13 - Relational database
+- **Apache Airflow 2.8.1** - Workflow orchestration
+- **PostgreSQL 13** - Relational database
+- **Python 3.8** - Data processing
+- **Docker & Docker Compose** - Containerization
+- **Pandas** - Data manipulation
+- **Matplotlib** - Data visualization
 
-Python 3.8 - Data processing
+## 🚀 Quick Start
 
-Docker & Docker Compose - Containerization
+### Prerequisites
+- 🐳 Docker
+- 🐳 Docker Compose
 
-Pandas - Data manipulation
+### Installation & Setup
 
-Matplotlib - Data visualization
-
-🚀 Quick Start
-Prerequisites
-🐳 Docker
-
-🐳 Docker Compose
-Installation & Setup
-1-Clone the repository
- git clone https://github.com/Ahmedsalah554/AirflowProject.git
- cd AirflowProject
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ahmedsalah554/AirflowProject.git
+   cd AirflowProject
 2-Start the services
  docker-compose up -d
 
@@ -86,17 +82,20 @@ Installation & Setup
  Click trigger button to start the analysis
 
 📁 Project Structure
+
+
 AirflowProject/
-├── .docker/           # Docker volumes and data persistence
-│   ├── dags/          # Airflow DAGs
-│   ├── logs/          # Airflow logs
-│   ├── plugins/       # Airflow plugins
-│   └── data/          # Generated reports and data
-├── docker-compose.yml # Service orchestration
-├── README.md          # Project documentation
-├── requirements.txt   # Python dependencies
-├── LICENSE           # MIT License
-└── scripts/          # Utility scripts
+├── dags/                # Airflow DAGs and workflows
+├── logs/                # Airflow execution logs
+├── plugins/             # Custom Airflow plugins
+├── data/                # Generated reports and output files
+├── docker-compose.yml   # Docker service orchestration
+├── requirements.txt     # Python dependencies
+├── README.md            # Project documentation
+├── LICENSE              # MIT License
+└── scripts/             # Utility and helper scripts
+
+
 
 🔧 Pipeline Tasks
 sales_revenue_pipeline DAG
