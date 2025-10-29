@@ -4,7 +4,7 @@ x-airflow-common:
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
-    AIRFLOW__CORE__FERNET_KEY: Q1dN5x2KJH9e2sT3jWvXrB1uU8y6kA3Pz2sLfQmGzPQ=
+    AIRFLOW__CORE__FERNET_KEY: Your_Key
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/sales_project_db
@@ -13,14 +13,14 @@ x-airflow-common:
     AIRFLOW__SMTP__SMTP_PORT: 587
     AIRFLOW__SMTP__SMTP_STARTTLS: "True"
     AIRFLOW__SMTP__SMTP_SSL: "False"
-    AIRFLOW__SMTP__SMTP_USER: salahabdelniem@gmail.com
+    AIRFLOW__SMTP__SMTP_USER: Your_E-Mail
     AIRFLOW__SMTP__SMTP_PASSWORD: ilye cory mqfl udeh
-    AIRFLOW__SMTP__SMTP_MAIL_FROM: salahabdelniem@gmail.com
+    AIRFLOW__SMTP__SMTP_MAIL_FROM: Your_E-Mail
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
-    - ./data:/opt/airflow/data  # ⬅️ زودنا volume للبيانات
+    - ./data:/opt/airflow/data  
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     postgres:
@@ -37,7 +37,7 @@ services:
       - postgres-db-volume:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-    healthcheck:  # ⬅️ زودنا health check
+    healthcheck: 
       test: ["CMD-SHELL", "pg_isready -U airflow -d sales_project_db"]
       interval: 10s
       timeout: 5s
