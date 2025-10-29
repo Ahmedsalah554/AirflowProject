@@ -53,9 +53,9 @@ flowchart LR
 
  🌐 URL: http://localhost:8080
 
- 👤 Username: admin
+ 👤 Username: Your_Name
 
- 🔑 Password: admin
+ 🔑 Password: Your_Pass
 
 4-Configure PostgreSQL Connection
 
@@ -69,11 +69,11 @@ flowchart LR
 
  Database: sales_project_db
 
- Username: airflow
+ Username: Your_Name
 
- Password: airflow
+ Password: Your_Pass
 
- Port: 5432
+ Port: Your_port_Num
 
 5-Trigger the Pipeline
 
