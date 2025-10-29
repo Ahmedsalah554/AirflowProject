@@ -85,15 +85,15 @@ flowchart LR
 
 
 AirflowProject/
-├── dags/                # Airflow DAGs and workflows
-├── logs/                # Airflow execution logs
-├── plugins/             # Custom Airflow plugins
-├── data/                # Generated reports and output files
-├── docker-compose.yml   # Docker service orchestration
-├── requirements.txt     # Python dependencies
-├── README.md            # Project documentation
-├── LICENSE              # MIT License
-└── scripts/             # Utility and helper scripts
+├── dags/                    # Airflow DAGs and workflows
+├── logs/                    # Airflow execution logs
+├── plugins/                 # Custom Airflow plugins
+├── data/                    # Generated reports and output files
+├── docker-compose.yml       # Docker service orchestration
+├── requirements.txt         # Python dependencies
+├── README.md                # Project documentation
+├── LICENSE                  # MIT License
+└── scripts/                 # Utility and helper scripts
 
 
 
